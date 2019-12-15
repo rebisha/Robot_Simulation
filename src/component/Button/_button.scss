@@ -1,0 +1,15 @@
+.btn {
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 1px solid #b8daff;
+    border-style: solid;
+    margin: 15px 5px;
+    width: 75px;
+    color: #004085;
+    background-color: #cce5ff;
+    font-size: 14px;
+
+    &:focus {
+        outline: none;
+    }
+}
