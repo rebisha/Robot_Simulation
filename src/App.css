@@ -1,8 +1,10 @@
 .App {
   text-align: center;
   display: flex;
-  margin: 50px;
+  margin: 30px;
   justify-content: space-between;
+  flex-direction: column-reverse;
+  width: 100%;
 }
 
 .col-6 {
@@ -13,7 +15,7 @@
 .navigate {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .message {
@@ -22,4 +24,16 @@
     left: 4.2%;
     color: red;
     font-weight: 500;
+}
+
+@media screen and (min-width: 900px) {
+  .App {
+    flex-direction: initial;
+    margin: 50px;
+  }
+
+  .navigate {
+    align-items: center;
+  }
+
 }

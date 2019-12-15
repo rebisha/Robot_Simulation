@@ -1,3 +1,9 @@
 .tableTop {
     position: absolute;
 }
+
+@media (min-width: 768px) {
+    .tableTop {
+        position: absolute;
+    }
+}

@@ -11,6 +11,10 @@ class Position extends Component {
         }
     }
 
+    componentDidMount() {
+        this.setPosition();
+    }
+
     handleXChange = (e) => {
         this.setState ({
             X: parseInt(e.target.value)

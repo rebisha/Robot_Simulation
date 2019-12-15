@@ -22,7 +22,7 @@ class App extends Component {
   robotPosition = (x, y) => {
     if(x<0 || x>4 || y<0 || y>4) {
       this.setState ({
-        message: 'Robot is off the table, please choose valid points'
+        message: 'Robot is off the table. Please provide a valid input.'
       });
       return;
     } else {
@@ -30,61 +30,62 @@ class App extends Component {
         X: x,
         Y: y,
         isPlaced: true,
+        message : ''
       });
     }
 
   }
 
   moveRight = () => {
-    const xPos = this.state.X;
+    const value = this.state.X;
+    const xPos = value + 1;
 
     if(!this.state.isPlaced) {
       this.setState({
         message: 'Robot is not yet placed on the table'
       });
     }
-    return this.setState({
-      X: xPos + 1,
-    });
+
+    this.robotPosition(xPos, this.state.Y);
   }
 
   moveLeft = () => {
-    const xPos = this.state.X;
+    const value = this.state.X;
+    const xPos = value - 1;
 
     if(!this.state.isPlaced) {
       this.setState({
         message: 'Robot is not yet placed on the table'
       });
     }
-    return this.setState({
-      X: xPos - 1,
-    });
+
+    this.robotPosition(xPos, this.state.Y);
   }
 
   moveUp = () => {
-    const yPos = this.state.Y;
+    const value = this.state.Y;
+    const yPos = value - 1;
 
     if(!this.state.isPlaced) {
       this.setState({
         message: 'Robot is not yet placed on the table'
       });
     }
-    return this.setState({
-      Y: yPos - 1,
-    });
+
+    this.robotPosition(this.state.X, yPos);
   }
 
   moveDown = () => {
-    const yPos = this.state.Y;
+    const value = this.state.Y;
+    const yPos = value + 1;
 
     if(!this.state.isPlaced) {
       this.setState({
         message: 'Robot is not yet placed on the table'
       });
     }
-    return this.setState({
-      Y: yPos + 1,
-    });
+
+    this.robotPosition(this.state.X, yPos);
   }
 
   render () {

@@ -1,42 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from '../Button/index';
 
-class Direction extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            X: 0,
-            Y: 0
-        };
+const Direction = ({ moveRight, moveLeft, moveUp, moveDown }) => {
+    const handleLeft = () => {
+        moveLeft();
     }
 
-    handleLeft = () => {
-        this.props.moveLeft();
+    const handleRight = () => {
+        moveRight();
     }
 
-    handleRight = () => {
-        this.props.moveRight();
+    const handleUp = () => {
+        moveUp();
     }
 
-    handleUp = () => {
-        this.props.moveUp();
+    const handleDown = () => {
+        moveDown();
     }
 
-    handleDown = () => {
-        this.props.moveDown();
-    }
-
-    render() {
-        return (
-            <div>
-                <Button onClick={this.handleLeft} text='Left' />
-                <Button onClick={this.handleRight} text='Right' />
-                <Button onClick={this.handleUp} text='Up' />
-                <Button onClick={this.handleDown} text='Down' />
-            </div>
-        );
-    }
+    return (
+        <div>
+            <Button onClick={handleLeft} text='Left' />
+            <Button onClick={handleRight} text='Right' />
+            <Button onClick={handleUp} text='Up' />
+            <Button onClick={handleDown} text='Down' />
+        </div>
+    );
 
 
 
