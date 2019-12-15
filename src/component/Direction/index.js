@@ -12,7 +12,7 @@ class Direction extends Component {
     }
 
     handleLeft = () => {
-        console.log('left');
+        this.props.moveLeft();
     }
 
     handleRight = () => {
@@ -20,11 +20,11 @@ class Direction extends Component {
     }
 
     handleUp = () => {
-        console.log('up');
+        this.props.moveUp();
     }
 
     handleDown = () => {
-        console.log('down');
+        this.props.moveDown();
     }
 
     render() {

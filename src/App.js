@@ -44,7 +44,46 @@ class App extends Component {
       });
     }
     return this.setState({
-      X: xPos+1,
+      X: xPos + 1,
+    });
+  }
+
+  moveLeft = () => {
+    const xPos = this.state.X;
+
+    if(!this.state.isPlaced) {
+      this.setState({
+        message: 'Robot is not yet placed on the table'
+      });
+    }
+    return this.setState({
+      X: xPos - 1,
+    });
+  }
+
+  moveUp = () => {
+    const yPos = this.state.Y;
+
+    if(!this.state.isPlaced) {
+      this.setState({
+        message: 'Robot is not yet placed on the table'
+      });
+    }
+    return this.setState({
+      Y: yPos - 1,
+    });
+  }
+
+  moveDown = () => {
+    const yPos = this.state.Y;
+
+    if(!this.state.isPlaced) {
+      this.setState({
+        message: 'Robot is not yet placed on the table'
+      });
+    }
+    return this.setState({
+      Y: yPos + 1,
     });
   }
 
@@ -60,7 +99,7 @@ class App extends Component {
 
         <div className="col-6 navigate">
           <StatusBar xPosition={X} yPosition={Y} />
-          <Direction moveRight={this.moveRight} />
+          <Direction moveRight={this.moveRight} moveLeft={this.moveLeft} moveUp={this.moveUp} moveDown={this.moveDown}/>
           <Position robotPosition={this.robotPosition}/>
         </div>
         <h3 className="message">{message}</h3>
